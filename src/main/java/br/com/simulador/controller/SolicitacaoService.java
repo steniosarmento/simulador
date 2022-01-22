@@ -12,7 +12,6 @@ import javax.inject.Named;
 
 import br.com.simulador.dao.SolicitacaoDAO;
 import br.com.simulador.model.Solicitacao;
-import br.com.simulador.sso.api.bean.Usuario;
 
 /**
  * Service de Solicitação.
@@ -31,28 +30,10 @@ public class SolicitacaoService implements Serializable {
 	SolicitacaoDAO dao = new SolicitacaoDAO();
 	List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 	List<Object[]> resultado = new ArrayList<Object[]>();
-	Usuario usuario = new Usuario();
-	String usu = "";
-	String depe = "";
-	String cargo = "";
 
 	public List<Solicitacao> listaSolicitacoes() {
 		solicitacoes = dao.listaSolicitacoes();
 		return solicitacoes;
-	}
-
-	private void inicializaUsuarioLogado() {
-
-		usuario.setChave("12345678");
-		usuario.setEmail("gustavao@unimed.com.br");
-		usuario.setNome("Gustavo Henrique Portugal Pires");
-		usuario.setNomeGuerra("Gustavão");
-		usuario.setTelefone("(31) 3451-1202");
-		usuario.setCargo("Gerente");
-		usuario.setPrefixoDiretoria("9999");
-		usuario.setPrefixoDependencia("8888");
-		usuario.setAvatar("teste");
-
 	}
 
 	public void atualiza(Solicitacao s) {
@@ -67,7 +48,6 @@ public class SolicitacaoService implements Serializable {
 	}
 
 	public void inclui(Solicitacao s) {
-		inicializaUsuarioLogado();
 		Timestamp dataHora;
 
 		Calendar calendar = Calendar.getInstance();
