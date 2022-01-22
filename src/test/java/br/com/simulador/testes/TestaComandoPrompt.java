@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Teste de execução de comando no prompt.
+ * Teste de execuÃ§Ã£oo de comando no prompt.
  * 
  * 
  * @author Stenio Sarmento
@@ -21,7 +21,7 @@ public class TestaComandoPrompt {
 
 		try {
 
-			Process p = Runtime.getRuntime().exec("ping hmgauditoriasimulador.servicos.bb.com.br");
+			Process p = Runtime.getRuntime().exec("ping google.com");
 
 			BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
