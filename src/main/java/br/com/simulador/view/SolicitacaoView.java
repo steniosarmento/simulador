@@ -16,7 +16,7 @@ import br.com.simulador.controller.SolicitacaoService;
 import br.com.simulador.model.Solicitacao;
 
 /**
- * View de Solicita��o.
+ * View de Solicitação.
  * 
  * 
  * @author Stenio Sarmento

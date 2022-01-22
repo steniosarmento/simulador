@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import br.com.simulador.model.Solicitacao;
 
 /**
- * DAO de Solicitação.
+ * DAO de SolicitaÃ§Ã£oo.
  * 
  * @author Stenio Sarmento
  * @version 1.0

@@ -8,7 +8,7 @@ import javax.inject.Named;
 import br.com.simulador.sso.api.bean.Usuario;
 
 /**
- * View de Usu�rio.
+ * View de Usuário.
  * 
  * 
  * @author Stenio Sarmento

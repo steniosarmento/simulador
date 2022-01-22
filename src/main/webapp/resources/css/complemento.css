@@ -33,7 +33,7 @@ body .ui-accordion .ui-accordion-content {
 	background-color: rgb(228, 232, 235);
 }
 
-/* Modifica o azul do thema (bot�es, accordion, abas) */
+/* Modifica o azul do thema (botões, accordion, abas) */
 body .ui-tabs .ui-tabs-nav .ui-tabs-header.ui-state-active {
 	background-color: rgb(0, 140, 80);
 	border: 1px solid rgb(0, 140, 80);
