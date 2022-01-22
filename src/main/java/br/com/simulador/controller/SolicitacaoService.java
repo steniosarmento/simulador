@@ -15,7 +15,7 @@ import br.com.simulador.model.Solicitacao;
 import br.com.simulador.sso.api.bean.Usuario;
 
 /**
- * Service de Solicita��o.
+ * Service de Solicitação.
  * 
  * @author Stenio Sarmento
  * @version 1.0
