@@ -1,0 +1,147 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<div class="ui-g-12" style="background-color: rgb(237, 237, 237);">
+
+		<p:button href="#" id="botaoDefault" style="display: none;"
+			value="Fazer nada" rendered="true" />
+
+		<p:card>
+			<f:facet name="title">Conheça a Unimed</f:facet>
+			<p>Somos 341 cooperativas, 118 mil médicos cooperados, 18 milhões
+				de beneficiários, 2.405 hospitais credenciados, 135 hospitais
+				próprios. Além de prontos atendimentos, laboratórios, centros de
+				diagnósticos e clínicas para garantir a qualidade da assistência
+				prestada aos beneficiários. Conheça algumas vantagens de ter um
+				plano Unimed:</p>
+		</p:card>
+
+		<br />
+
+		<div class="card">
+			<p:panelGrid columns="4" layout="grid"
+				styleClass="showcase-text-align-center"
+				columnClasses="ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-6 ui-lg-3">
+
+				<p:card style="min-height: 540px;">
+					<f:facet name="header">
+						<p:graphicImage name="img/tranquilidade.jpg"
+							style="max-height: 280px;" />
+					</f:facet>
+					<f:facet name="title">Tranquilidade e segurança</f:facet>
+					<p>Um pai de família sabe muito bem a preocupação que surge
+						quando um filho fica doente. O desespero fica ainda maior quando
+						se depende do SUS. Por isso, contratar um plano de saúde UNIMED
+						traz tranquilidade e segurança para toda a família.</p>
+				</p:card>
+
+				<p:card style="min-height: 540px;">
+					<f:facet name="header">
+						<p:graphicImage name="img/liberdade.jpg"
+							style="max-height: 280px;" />
+					</f:facet>
+					<f:facet name="title">Liberdade para escolher</f:facet>
+					<p>Temos mais de 118 mil médicos cooperados em todo o Brasil!</p>
+				</p:card>
+
+				<p:card style="min-height: 540px;">
+					<f:facet name="header">
+						<p:graphicImage name="img/economia.jpg" style="max-height: 280px;" />
+					</f:facet>
+					<f:facet name="title">Economia em médio e longo prazo</f:facet>
+					<p>Já imaginou se você precisar pagar 10 dias de uma UTI?
+						Infelizmente, ninguém está livre dessa situação e o plano de saúde
+						funciona como um “seguro” para você e sua família.</p>
+				</p:card>
+
+				<p:card style="min-height: 540px;">
+					<f:facet name="header">
+						<p:graphicImage name="img/prevencao.png"
+							style="max-height: 280px;" />
+					</f:facet>
+					<f:facet name="title">Prevenção é o melhor caminho</f:facet>
+					<p>O check-up é uma avaliação médica de rotina associada a
+						exames específicos de acordo com idade, sexo e históricos pessoal
+						e familiar, ajuda a prevenir doenças por meio da informação e da
+						realização de ações de prevenção.</p>
+				</p:card>
+
+			</p:panelGrid>
+		</div>
+
+		<br />
+
+		<p:card>
+			<f:facet name="title">Simule e contrate!</f:facet>
+			<p>A Unimed foi pensada para todos. Proteger você e sua família é
+				muito mais barato do que você imagina. Faça uma simulação,
+				surpreenda-se e contrate agora mesmo:</p>
+
+
+			<h:outputText value="Sua idade: " />
+
+			<p:spinner id="idade"
+				value="#{solicitacaoView.novoSolicitacao.idadeCliente}" min="18"
+				max="99" />
+
+			<br />
+			<br />
+
+			<p:commandButton value="Simular!" id="novo" icon="pi pi-check"
+				actionListener="#{solicitacaoView.novoSolicitacaoAction}"
+				update=":principalForm:novoSolicitacaoDetail"
+				oncomplete="PF('novoSolicitacaoDialog').show()" />
+
+		</p:card>
+
+
+		<br />
+
+		<!-- Modal dados da simulação -->
+		<p:dialog header="Simulação" widgetVar="novoSolicitacaoDialog"
+			modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+			<p:outputPanel id="novoSolicitacaoDetail" style="text-align:center;">
+
+				<p:panelGrid columns="2" columnClasses="label,value">
+					<h:outputText value="Idade: " />
+					<h:outputText id="simulacaoIdade"
+						value="#{solicitacaoView.novoSolicitacao.idadeCliente}" />
+					<h:outputText value="Seu plano ideal: " />
+					<h:outputText id="simulacaoPlano"
+						value="#{solicitacaoView.novoSolicitacao.planoSugerido}" />
+				</p:panelGrid>
+				<br />
+				<br />
+				<p:commandButton value="Quero contratar!" id="salvar"
+					icon="pi pi-check" update=":principalForm:exibirSenhaDetail"
+					oncomplete="PF('exibirSenhaDialog').show()" />
+			</p:outputPanel>
+		</p:dialog>
+
+		<!-- Modal Contratação -->
+		<p:dialog header="Seus dados" widgetVar="exibirSenhaDialog"
+			modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+			<p:outputPanel id="exibirSenhaDetail" style="text-align:center;">
+				<p:panelGrid columns="2" columnClasses="label,value">
+					<h:outputText value="Nome completo: " />
+					<p:inputText value="#{solicitacaoView.novoSolicitacao.nomeCliente}" />
+					<h:outputText value="Celular: " />
+					<p:inputMask id="phone"
+						value="#{solicitacaoView.novoSolicitacao.telefoneCliente}"
+						mask="(99) 99999-9999" validateMask="true" />
+				</p:panelGrid>
+				<br />
+				<br />
+				<p:commandButton value="Confirmar" id="confirmar"
+					actionListener="#{solicitacaoView.novoAction}" ajax="false"
+					update="mensagens" icon="pi pi-check" />
+			</p:outputPanel>
+		</p:dialog>
+
+	</div>
+</ui:composition>
