@@ -18,7 +18,7 @@ import br.com.simulador.util.ConstantsSimulador;
  * Modelo de Solicitacao.
  * 
  * 
- * @author Stenio Sarmento
+ * @author Stenio Sarmento.
  * @version 1.0
  * @see br.com.simulador.model
  * 
