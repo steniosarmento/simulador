@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import br.com.simulador.util.ConstantsSimulador;
@@ -54,6 +55,9 @@ public class Solicitacao implements Serializable {
 
 	@Column(name = "est_prct")
 	private String estadoProcessamento = "S";
+
+	@Transient
+	private Plano plano;
 
 	public Solicitacao() {
 		super();
@@ -141,6 +145,14 @@ public class Solicitacao implements Serializable {
 		} else {
 			return "/img/solicitado.png";
 		}
+	}
+
+	public Plano getPlano() {
+		return plano;
+	}
+
+	public void setPlano(Plano plano) {
+		this.plano = plano;
 	}
 
 }
