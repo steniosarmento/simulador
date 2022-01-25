@@ -78,9 +78,17 @@ public class SolicitacaoView implements Serializable {
 
 	public void novoSolicitacaoAction(ActionEvent actionEvent) {
 		Plano plano = new Plano();
-		plano.setId(1);
-		plano.setNome("Plano de Teste");
-		plano.setPreco(1600.50);
+
+		if (novoSolicitacao.getIdadeCliente() % 2 == 0) {
+			plano.setId(1);
+			plano.setNome("Plano Idade Par");
+			plano.setPreco(1600.50);
+		} else {
+			plano.setId(1);
+			plano.setNome("Plano Idade Impar");
+			plano.setPreco(1600.50);
+		}
+
 		/* Calculando o plano ideal pegando a idade do cliente + 100 */
 		novoSolicitacao.setPlanoSugerido(novoSolicitacao.getIdadeCliente() + 100);
 		novoSolicitacao.setPlano(plano);
