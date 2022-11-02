@@ -7,11 +7,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
-
 import br.com.simulador.dao.SolicitacaoDAO;
 import br.com.simulador.model.Solicitacao;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 
 /**
  * Service de Solicitação.

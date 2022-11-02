@@ -9,8 +9,6 @@
 
 		<non-jta-data-source>java:comp/env/jdbc/banco_java</non-jta-data-source>
 
-		<class>br.com.simulador.model.Solicitacao</class>
-
 		<properties>
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.PostgreSQLDialect" />

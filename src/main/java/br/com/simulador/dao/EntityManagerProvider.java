@@ -1,7 +1,7 @@
 package br.com.simulador.dao;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 /**
  * Provedor de EM do Projeto.

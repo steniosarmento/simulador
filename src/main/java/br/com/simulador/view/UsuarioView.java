@@ -2,10 +2,9 @@ package br.com.simulador.view;
 
 import java.io.Serializable;
 
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
-
 import br.com.simulador.sso.api.bean.Usuario;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Named;
 
 /**
  * View de Usuário.

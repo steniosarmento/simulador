@@ -6,10 +6,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
 import br.com.simulador.model.Solicitacao;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 
 /**
  * DAO de Solicitaçãoo.
