@@ -10,7 +10,6 @@
 
 		<p:button href="#" id="botaoDefault" style="display: none;"
 			value="Fazer nada" rendered="true" />
-		<br />
 
 		<div class="card">
 			<!-- DataTable de Solicitacoes -->
@@ -116,7 +115,7 @@
 							pattern="dd/MM/yyyy HH:mm:ss" />
 					</h:outputText>
 					<h:outputText value="Plano Sugerido:" />
-					<p:inputNumber
+					<h:outputText
 						value="#{solicitacaoView.selecionadoSolicitacao.planoSugerido}" />
 				</p:panelGrid>
 				<br />

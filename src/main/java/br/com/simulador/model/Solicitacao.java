@@ -50,13 +50,13 @@ public class Solicitacao implements Serializable {
 	private String telefoneCliente;
 
 	@Column(name = "plano_suger")
-	private int planoSugerido;
+	private int planoSugerido = 1;
 
 	@Column(name = "est_prct")
 	private String estadoProcessamento = "S";
 
 	@Transient
-	private Plano plano;
+	private Plano plano = new Plano();
 
 	public Solicitacao() {
 		super();

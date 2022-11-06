@@ -8,7 +8,12 @@
 
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>saga</param-value>
+		<param-value>nova-light</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.omnifaces.FACES_VIEWS_SCAN_PATHS</param-name>
+		<param-value>/*.xhtml</param-value>
 	</context-param>
 
 	<servlet>
@@ -28,7 +33,7 @@
 	</resource-ref>
 
 	<welcome-file-list>
-		<welcome-file>principal.xhtml</welcome-file>
+		<welcome-file>principal</welcome-file>
 	</welcome-file-list>
 
 </web-app>

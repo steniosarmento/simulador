@@ -6,9 +6,9 @@ public class Plano implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private int id;
-	private String nome;
-	private Double preco;
+	private int id = 0;
+	private String nome = "Teste";
+	private Double preco = 0.0;
 
 	public Plano() {
 		super();
