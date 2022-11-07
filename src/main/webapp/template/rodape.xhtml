@@ -41,10 +41,18 @@
 
 	<div class="ui-g-12"
 		style="background-color: rgb(12, 94, 83); color: white; left: 0; bottom: 0;">
+
+		<p:button href="#" id="botaoDefault" style="display: none;"
+			value="Fazer nada" rendered="true" />
+
 		<p:growl id="mensagens" showDetail="true" sticky="true" />
 
 		<h:outputLink value="/simulador/protegido/solicitacaoDetalhe">
-			<h:outputText value="© Unimed"
+			<h:outputText value="©"
+				style="font-size:16px; color:white; font-weight: bold;" />
+		</h:outputLink>
+		<h:outputLink target="_blank" value="https://www.unimed.coop.br">
+			<h:outputText value=" Unimed"
 				style="font-size:16px; color:white; font-weight: bold;" />
 		</h:outputLink>
 		<h:outputText style="font-size:12px; float: right !important;"

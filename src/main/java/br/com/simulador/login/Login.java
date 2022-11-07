@@ -50,10 +50,11 @@ public class Login implements Serializable {
 		if (valid) {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", user);
-			return "/protegido/solicitacaoDetalhe";
+			return "/protegido/solicitacaoDetalhe?faces-redirect=true";
 		} else {
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,
-					"Incorrect Username and Passowrd", "Please enter correct username and Password"));
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "" + "Usuário e/ou Senha errados"));
 			return "/login";
 		}
 	}
@@ -62,6 +63,6 @@ public class Login implements Serializable {
 	public String logout() {
 		HttpSession session = SessionUtils.getSession();
 		session.invalidate();
-		return "/principal";
+		return "/principal?faces-redirect=true";
 	}
 }
