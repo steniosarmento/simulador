@@ -6,16 +6,31 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<div class="ui-g-12" style="background-color: rgb(237, 237, 237);">
-
-		<h:outputText value="Usuário: " />
-		<p:inputText value="#{login.user}" />
-		<br />
-		<h:outputText value="Senha: " />
-		<p:password id="toggle" value="#{login.pwd}" toggleMask="true"
-			redisplay="true" />
-		<br />
-		<p:commandButton update="mensagens"
-			action="#{login.validateUsernamePassword}" value="Login"></p:commandButton>
-	</div>
+	<section class="forms">
+		<div class="forms-grid">
+			<div class="login">
+				<strong>Bem vindo!</strong> <span>Entre em sua conta</span>
+				<h:form class="login-form">
+					<fieldset>
+						<div class="form">
+							<div class="form-row">
+								<label class="form-label" for="input">Usuário</label>
+								<h:inputText value="#{login.user}" class="form-text" />
+							</div>
+							<div class="form-row">
+								<label class="form-label" for="input">Senha</label>
+								<h:inputText value="#{login.pwd}" type="password"
+									class="form-text" />
+							</div>
+							<div class="form-row button-login">
+								<h:commandButton update="mensagens"
+									action="#{login.validateUsernamePassword}"
+									class="btn btn-login" value="Login"></h:commandButton>
+							</div>
+						</div>
+					</fieldset>
+				</h:form>
+			</div>
+		</div>
+	</section>
 </ui:composition>

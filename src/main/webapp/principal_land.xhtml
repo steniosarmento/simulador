@@ -6,8 +6,8 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<div class="ui-g-12" style="background-color: rgb(237, 237, 237);">
-
+	<h:form id="principalForm">
+		<br />
 		<p:card>
 			<f:facet name="title">Conheça a Unimed</f:facet>
 			<p>Somos 341 cooperativas, 118 mil médicos cooperados, 18 milhões
@@ -79,7 +79,7 @@
 				muito mais barato do que você imagina. Faça uma simulação,
 				surpreenda-se e contrate agora mesmo:</p>
 
-
+			<br />
 			<h:outputText value="Sua idade: " />
 
 			<p:spinner id="idade"
@@ -96,7 +96,6 @@
 
 		</p:card>
 
-
 		<br />
 
 		<!-- Modal dados da simulação -->
@@ -112,7 +111,6 @@
 					<h:outputText id="simulacaoPlano"
 						value="#{solicitacaoView.novoSolicitacao.plano.nome}" />
 				</p:panelGrid>
-				<br />
 				<br />
 				<p:commandButton value="Quero contratar!" id="salvar"
 					icon="pi pi-check" update=":principalForm:exibirSenhaDetail"
@@ -140,5 +138,6 @@
 			</p:outputPanel>
 		</p:dialog>
 
-	</div>
+	</h:form>
+
 </ui:composition>

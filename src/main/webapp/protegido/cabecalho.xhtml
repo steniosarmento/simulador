@@ -5,53 +5,48 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<h:form>
+		<div class="ui-g">
 
-	<div class="ui-g">
-		<div class="ui-g-1"
-			style="background-color: rgb(0, 140, 80); text-align: center;">
-			<h:outputLink value="/simulador/protegido/solicitacaoDetalhe">
-				<p:graphicImage name="img/logo.png"
-					style="width: 100%; max-width: 110px; height: auto;" />
-			</h:outputLink>
-		</div>
-		<div class="ui-g-2"
-			style="background-color: rgb(12, 94, 83); text-align: center;">
-		</div>
-		<div class="ui-g-6"
-			style="background-color: rgb(12, 94, 83); text-align: center;">
-			<h:outputText value="CRM - Gestão de Contatos"
-				style="font-size:25px;
+			<div class="ui-g-1"
+				style="background-color: rgb(0, 140, 80); text-align: center;">
+				<h:outputLink value="/simulador/protegido/solicitacaoDetalhe">
+					<p:graphicImage name="img/logo.png"
+						style="width: 100%; max-width: 110px; height: auto;" />
+				</h:outputLink>
+			</div>
+			<div class="ui-g-2"
+				style="background-color: rgb(12, 94, 83); text-align: center;">
+			</div>
+			<div class="ui-g-6"
+				style="background-color: rgb(12, 94, 83); text-align: center;">
+				<br />
+				<h:outputText value="CRM - Gestão de Contatos"
+					style="font-size:25px;
 								  font-weight: bold;
 								  color:rgb(255,255,255);" />
-			<br />
-			<h:outputText
-				value="Mantenha os contatos em dia &lt;br/&gt; Entre em contato agora!"
-				escape="false"
-				style="font-size:15px;
-								  font-weight: bold;
-								  color:rgb(202, 174, 5);" />
-			<br />
-		</div>
-		<div class="ui-g-2"
-			style="text-align: right; background-color: rgb(12, 94, 83); color: rgb(255, 255, 255); float: right !important;">
-			<h:outputText value="#{login.user}"
-				style="font-weight: bold; text-transform: capitalize;" />
-			<h:outputText value=" - " style="text-transform: capitalize;" />
-			<p:commandButton ajax="false" action="#{login.logout}" value="Logout"></p:commandButton>
-			<br />
-			<h:outputText value="TestandoCargo"
-				style="text-transform: capitalize;" />
-			<br />
-			<h:outputText value="TestandoTelefone" />
-		</div>
-		<div class="ui-g-1"
-			style="background-color: rgb(12, 94, 83); color: rgb(100, 101, 102)">
+				<br /> <br />
+			</div>
+			<div class="ui-g-2"
+				style="text-align: right; background-color: rgb(12, 94, 83); color: rgb(255, 255, 255); float: right !important;">
+				<h:outputText value="#{login.user}"
+					style="font-weight: bold; text-transform: capitalize;" />
+				<br />
+				<h:outputText value="Gerente" style="text-transform: capitalize;" />
+				<br />
+				<p:commandButton ajax="false" action="#{login.logout}"
+					value="Logout" />
+			</div>
+			<div class="ui-g-1"
+				style="background-color: rgb(12, 94, 83); color: rgb(100, 101, 102)">
 
-			<p:graphicImage name="img/avatar.png" class="rounded float-left"
-				style="border-radius: 50%!important;" height="70" width="70" />
+				<p:graphicImage name="img/avatar.png" class="rounded float-left"
+					style="border-radius: 50%!important;" height="70" width="70" />
+
+			</div>
 
 		</div>
-	</div>
+	</h:form>
 
 
 </ui:composition>

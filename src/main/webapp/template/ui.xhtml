@@ -15,19 +15,18 @@
 		</ui:insert>
 	</h:head>
 
-	<!-- Modal Loading Inicio -->
-	<p:ajaxStatus onstart="PF('statusDialog').show()"
-		onsuccess="PF('statusDialog').hide()" />
-	<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
-		closable="false" resizable="false" showHeader="false">
-		<br />
-		<br />
-		<i class="pi pi-spin pi-spinner"
-			style="font-size: 2.5em; color: rgb(12, 94, 83);" />
-	</p:dialog>
-	<!-- Modal Loading Fim -->
+	<h:outputStylesheet library="css" name="style.css" />
 
-	<h:body style="background-color:rgb(237,237,237); margin: 0px;">
+	<h:body>
+		<!-- Modal Loading Inicio -->
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" />
+		<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+			closable="false" resizable="false" showHeader="false">
+			<i class="pi pi-spin pi-spinner"
+				style="font-size: 2.5em; color: rgb(12, 94, 83);" />
+		</p:dialog>
+		<!-- Modal Loading Fim -->
 		<ui:insert name="body">
 		</ui:insert>
 		<ui:insert name="script">
