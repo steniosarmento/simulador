@@ -7,7 +7,7 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 	<div class="ui-g-12" style="background-color: rgb(237, 237, 237);">
-		<h:form id="principalForm" >
+		<h:form id="principalForm">
 
 			<div class="card">
 				<!-- DataTable de Solicitacoes -->
@@ -42,28 +42,30 @@
 					<p:column filterBy="#{solicitacao.id}" headerText="ID"
 						filterMatchMode="exact">
 						<f:facet name="filter">
-							<p:inputText
+							<p:inputText size="5"
 								onkeydown="if (event.keyCode === 13) { PF('solicitacaoTable').filter() }" />
 						</f:facet>
 						<h:outputText value="#{solicitacao.id}" />
 					</p:column>
-					<p:column filterBy="#{solicitacao.nomeCliente}" headerText="Nome"
+					<p:column responsivePriority="2"
+						filterBy="#{solicitacao.nomeCliente}" headerText="Nome"
 						filterMatchMode="startsWith">
 						<f:facet name="filter">
-							<p:inputText
+							<p:inputText size="10"
 								onkeydown="if (event.keyCode === 13) { PF('solicitacaoTable').filter() }" />
 						</f:facet>
 						<h:outputText value="#{solicitacao.nomeCliente}" />
 					</p:column>
 
-					<p:column headerText="Idade">
+					<p:column responsivePriority="3" headerText="Idade">
 
 						<h:outputText value="#{solicitacao.idadeCliente}" />
 					</p:column>
-					<p:column headerText="Telefone">
+					<p:column responsivePriority="4" headerText="Telefone">
 						<h:outputText value="#{solicitacao.telefoneCliente}" />
 					</p:column>
-					<p:column filterBy="#{solicitacao.estadoProcessamentoExt}"
+					<p:column responsivePriority="5"
+						filterBy="#{solicitacao.estadoProcessamentoExt}"
 						headerText="Situação" filterMatchMode="exact">
 						<f:facet name="filter">
 							<p:selectOneMenu onchange="PF('solicitacaoTable').filter()">
@@ -73,18 +75,11 @@
 						</f:facet>
 						<h:outputText value="#{solicitacao.estadoProcessamentoExt}" />
 					</p:column>
-					<p:column headerText="Data/Hora Solicitação">
+					<p:column responsivePriority="6" headerText="Data/Hora Solicitação">
 						<h:outputText value="#{solicitacao.dataSolicitacao}">
 							<f:convertDateTime locale="pt" dateStyle="long"
 								pattern="dd/MM/yyyy HH:mm:ss" />
 						</h:outputText>
-					</p:column>
-					<p:column headerText="Ícone Situacão" exportable="false">
-						<div style="text-align: center;">
-							<p:graphicImage value="#{solicitacao.estadoProcessamentoIco}"
-								title="#{solicitacao.estadoProcessamentoExt}" height="24"
-								width="24" />
-						</div>
 					</p:column>
 				</p:dataTable>
 			</div>
