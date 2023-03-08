@@ -21,7 +21,7 @@ public class TestaComandoPrompt {
 
 		try {
 
-			Process p = Runtime.getRuntime().exec("ls -la");
+			Process p = Runtime.getRuntime().exec("ping google.com");
 
 			BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));

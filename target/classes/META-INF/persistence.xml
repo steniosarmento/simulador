@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="simulador">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<non-jta-data-source>java:comp/env/jdbc/banco_java</non-jta-data-source>
+
+		<properties>
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.id.new_generator_mappings"
+				value="false" />
+			<property name="hibernate.format_sql" value="false" />
+		</properties>
+
+	</persistence-unit>
+</persistence>
