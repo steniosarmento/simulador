@@ -3,6 +3,8 @@ package br.com.simulador.testes;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Teste de execuçãoo de comando no prompt.
@@ -17,6 +19,11 @@ import java.io.InputStreamReader;
 public class TestaComandoPrompt {
 
 	public static void main(String[] args) {
+
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+		LocalDateTime now = LocalDateTime.now();  
+		System.out.println("Hora: " + dtf.format(now));
+
 		String s = null;
 
 		try {
