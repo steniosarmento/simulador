@@ -24,10 +24,6 @@ public class SolicitacaoDAO implements Serializable {
 
 	EntityManager em = EntityManagerProvider.getEntityManagerFactory().createEntityManager();
 
-	public boolean ADM(String depe) {
-		return true;
-	}
-
 	@SuppressWarnings("unchecked")
 	public List<Solicitacao> listaSolicitacoes() {
 		List<Solicitacao> lista = new ArrayList<Solicitacao>();

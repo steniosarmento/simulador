@@ -1,23 +1,17 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:pe="http://primefaces.org/ui/extensions"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 	<div class="ui-g-12" style="background-color: rgb(237, 237, 237);">
 		<h:form id="principalForm">
 
 			<div class="card">
 				<!-- DataTable de Solicitacoes -->
-				<p:dataTable id="solicitacaoDT" var="solicitacao"
-					widgetVar="solicitacaoTable"
-					emptyMessage="Nenhum Registro Encontrado"
-					value="#{solicitacaoView.solicitacoes}" rows="10" paginator="true"
+				<p:dataTable id="solicitacaoDT" var="solicitacao" widgetVar="solicitacaoTable"
+					emptyMessage="Nenhum Registro Encontrado" value="#{solicitacaoView.solicitacoes}" rows="10"
+					paginator="true"
 					paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-					selectionMode="single"
-					selection="#{solicitacaoView.selecionadoSolicitacao}"
+					selectionMode="single" selection="#{solicitacaoView.selecionadoSolicitacao}"
 					rowKey="#{solicitacao.id}">
 
 					<f:facet name="header">
@@ -28,10 +22,8 @@
 								placeholder="Digite sua busca" />
 							<h:commandLink id="excel" style="float: right;">
 								<p:graphicImage name="img/excel.png" height="32" width="32"
-									alt="Exportar lista para Excel"
-									title="Exportar lista para Excel" />
-								<p:dataExporter type="xls" target="solicitacaoDT"
-									fileName="solicitacoes" />
+									alt="Exportar lista para Excel" title="Exportar lista para Excel" />
+								<p:dataExporter type="xls" target="solicitacaoDT" fileName="solicitacoes" />
 							</h:commandLink>
 						</p:outputPanel>
 					</f:facet>
@@ -39,16 +31,14 @@
 					<p:ajax event="rowSelect" update=":principalForm:solicitacaoDetail"
 						oncomplete="PF('solicitacaoDialog').show()" />
 
-					<p:column filterBy="#{solicitacao.id}" headerText="ID"
-						filterMatchMode="exact">
+					<p:column filterBy="#{solicitacao.id}" headerText="ID" filterMatchMode="exact">
 						<f:facet name="filter">
 							<p:inputText size="5"
 								onkeydown="if (event.keyCode === 13) { PF('solicitacaoTable').filter() }" />
 						</f:facet>
 						<h:outputText value="#{solicitacao.id}" />
 					</p:column>
-					<p:column responsivePriority="2"
-						filterBy="#{solicitacao.nomeCliente}" headerText="Nome"
+					<p:column responsivePriority="2" filterBy="#{solicitacao.nomeCliente}" headerText="Nome"
 						filterMatchMode="startsWith">
 						<f:facet name="filter">
 							<p:inputText size="10"
@@ -64,8 +54,7 @@
 					<p:column responsivePriority="4" headerText="Telefone">
 						<h:outputText value="#{solicitacao.telefoneCliente}" />
 					</p:column>
-					<p:column responsivePriority="5"
-						filterBy="#{solicitacao.estadoProcessamentoExt}"
+					<p:column responsivePriority="5" filterBy="#{solicitacao.estadoProcessamentoExt}"
 						headerText="Situação" filterMatchMode="exact">
 						<f:facet name="filter">
 							<p:selectOneMenu onchange="PF('solicitacaoTable').filter()">
@@ -77,15 +66,13 @@
 					</p:column>
 					<p:column responsivePriority="6" headerText="Data/Hora Solicitação">
 						<h:outputText value="#{solicitacao.dataSolicitacao}">
-							<f:convertDateTime locale="pt" dateStyle="long"
-								pattern="dd/MM/yyyy HH:mm:ss" />
+							<f:convertDateTime locale="pt" dateStyle="long" pattern="dd/MM/yyyy HH:mm:ss" />
 						</h:outputText>
 					</p:column>
 				</p:dataTable>
 			</div>
 			<!-- Modal de detalhes -->
-			<p:dialog header="Detalhes da Simulação"
-				widgetVar="solicitacaoDialog" modal="true" showEffect="fade"
+			<p:dialog header="Detalhes da Simulação" widgetVar="solicitacaoDialog" modal="true" showEffect="fade"
 				hideEffect="fade" resizable="true">
 
 				<p:outputPanel id="solicitacaoDetail" style="text-align:center;">
@@ -93,28 +80,22 @@
 						<h:outputText value="Identificador:" />
 						<h:outputText value="#{solicitacaoView.selecionadoSolicitacao.id}" />
 						<h:outputText value="Nome:" />
-						<h:outputText
-							value="#{solicitacaoView.selecionadoSolicitacao.nomeCliente}" />
+						<h:outputText value="#{solicitacaoView.selecionadoSolicitacao.nomeCliente}" />
 						<h:outputText value="Idade:" />
-						<h:outputText
-							value="#{solicitacaoView.selecionadoSolicitacao.idadeCliente}" />
+						<p:spinner id="idade" size="5" value="#{solicitacaoView.selecionadoSolicitacao.idadeCliente}"
+							min="18" max="99" />
 						<h:outputText value="Telefone:" />
-						<h:outputText
-							value="#{solicitacaoView.selecionadoSolicitacao.telefoneCliente}" />
+						<h:outputText value="#{solicitacaoView.selecionadoSolicitacao.telefoneCliente}" />
 						<h:outputText value="Data/Hora da Solicitação:" />
-						<h:outputText
-							value="#{solicitacaoView.selecionadoSolicitacao.dataSolicitacao}">
-							<f:convertDateTime locale="pt" dateStyle="long"
-								pattern="dd/MM/yyyy HH:mm:ss" />
+						<h:outputText value="#{solicitacaoView.selecionadoSolicitacao.dataSolicitacao}">
+							<f:convertDateTime locale="pt" dateStyle="long" pattern="dd/MM/yyyy HH:mm:ss" />
 						</h:outputText>
 						<h:outputText value="Plano Sugerido:" />
-						<h:outputText
-							value="#{solicitacaoView.selecionadoSolicitacao.planoSugerido}" />
+						<h:outputText value="#{solicitacaoView.selecionadoSolicitacao.planoSugerido}" />
 					</p:panelGrid>
 					<br />
-					<p:commandButton value="Atualizar" id="atualizar"
-						actionListener="#{solicitacaoView.atualizaAction}" ajax="false"
-						update="mensagens" icon="pi pi-check" />
+					<p:commandButton value="Atualizar" id="atualizar" actionListener="#{solicitacaoView.atualizaAction}"
+						ajax="false" update="mensagens" icon="pi pi-check" />
 					<br />
 				</p:outputPanel>
 			</p:dialog>
