@@ -28,24 +28,30 @@ public class TestaComandoPrompt {
 
 		try {
 
-			Process p = Runtime.getRuntime().exec(new String[] {"/bin/bash", "-c", "ls -la"});
+			String[] cmd;
+			if (System.getProperty("os.name").toLowerCase().contains("win")) {
+				cmd = new String[] {"cmd.exe", "/c", "dir"};
+			} else {
+				cmd = new String[] {"/bin/bash", "-c", "ls"};
+			}
+			Process p = Runtime.getRuntime().exec(cmd);
 			BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 
-			System.out.println("Here is the standard output of the command:\n");
+			System.out.println("Aqui é a saída do comando:\n");
 			while ((s = stdInput.readLine()) != null) {
 				System.out.println(s);
 			}
 
 			System.out.println("\n");
-			System.out.println("Here is the standard error of the command (if any):\n");
+			System.out.println("Aqui é o erro do comando (se houver):\n");
 			while ((s = stdError.readLine()) != null) {
 				System.out.println(s);
 			}
 
 			System.exit(0);
 		} catch (IOException e) {
-			System.out.println("exception happened - here's what I know: ");
+			System.out.println("Exception - Aqui está o log: ");
 			e.printStackTrace();
 			System.exit(-1);
 		}
