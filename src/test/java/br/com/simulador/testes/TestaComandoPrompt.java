@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Teste de execuçãoo de comando no prompt.
+ * Teste de execução de comando no prompt.
  * 
  * 
  * @author Stenio Sarmento
