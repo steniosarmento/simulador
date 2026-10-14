@@ -1,9 +1,8 @@
 package br.com.simulador.dao;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import br.com.simulador.model.Solicitacao;
@@ -27,10 +26,9 @@ public class SolicitacaoDAO implements Serializable {
 	@SuppressWarnings("unchecked")
 	public List<Solicitacao> listaSolicitacoes() {
 		List<Solicitacao> lista = new ArrayList<Solicitacao>();
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(new Date());
-		cal.add(Calendar.DATE, -90);
-		Date data90Dias = cal.getTime();
+		
+		LocalDate data90Dias = LocalDate.now().minusDays(90);
+
 		em = EntityManagerProvider.getEntityManagerFactory().createEntityManager();
 		em.clear();
 		Query query = em

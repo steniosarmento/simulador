@@ -30,11 +30,7 @@ public class LoginDAO implements Serializable {
 
 		em.close();
 
-		if (lista.size() > 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return !lista.isEmpty();
 	}
 
 	public void atualiza(User u) {
